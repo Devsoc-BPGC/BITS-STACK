@@ -7,5 +7,7 @@
 			"path": "client"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.formatOnSave": true
+	}
 }
