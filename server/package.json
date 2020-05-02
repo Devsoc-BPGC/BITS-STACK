@@ -15,7 +15,7 @@
     }
   },
   "lint-staged": {
-    "../*.{js,jsx,ts,tsx}": [
+    "./*.{js,jsx,ts,tsx}": [
       "npx prettier --write",
       "eslint ./*.js --fix-dry-run"
     ]
