@@ -1,13 +1,6 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "client"
-		}
-	],
-	"settings": {
-		"editor.formatOnSave": true
-	}
+	"folders": [{
+
+	}],
+	"settings": {}
 }
