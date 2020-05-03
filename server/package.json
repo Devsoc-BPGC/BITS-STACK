@@ -7,7 +7,8 @@
     "start": "node ./bin/www",
     "client": "cd ../client && npm start",
     "server": "nodemon ./bin/www",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "linter": "eslint . --fix --ext .js --ext .jsx --ext .ts --ext .tsx"
   },
   "husky": {
     "hooks": {
@@ -15,9 +16,9 @@
     }
   },
   "lint-staged": {
-    "./*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint ./*.js --fix-dry-run"
+    "*.{js,jsx,ts,tsx}": [
+      "npm run linter",
+      "git add"
     ]
   },
   "dependencies": {
