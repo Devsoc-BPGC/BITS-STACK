@@ -1,17 +1,10 @@
 FROM node:alpine
 
-WORKDIR /home/waves2020
+WORKDIR /home/waves2020/server/
 
-COPY ./package.json ./
+COPY ./package*.json ./
 RUN npm install
-
-RUN mkdir client
-COPY ./client/package.json ./client/
-RUN cd client
-RUN npm install
-RUN cd ..
 
 COPY ./ ./
-COPY ./client/ ./client/
 
-CMD ["npm","run","dev"]
+CMD ["npm","start"]
