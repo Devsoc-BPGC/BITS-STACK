@@ -3,7 +3,12 @@
   "plugins": ["prettier"],
   "rules": {
     "no-console": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "func-names": "off",
     "object-shorthand": "off",
     "react/jsx-filename-extension": [
@@ -11,6 +16,7 @@
       {
         "extensions": [".js", ".jsx"]
       }
-    ]
+    ],
+    "no-underscore-dangle": "off"
   }
 }

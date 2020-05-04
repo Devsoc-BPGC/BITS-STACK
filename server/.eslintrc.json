@@ -7,6 +7,10 @@
     "func-names": "off",
     "object-shorthand": "off",
     "space-before-function-paren": "off",
-    "no-process-exit": "off"
+    "no-process-exit": "off",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": true
+    }],
+    "node/no-unpublished-require": "off"
   }
 }

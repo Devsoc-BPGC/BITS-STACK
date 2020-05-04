@@ -1,6 +1,7 @@
 {
   "singleQuote": true,
   "jsxSingleQuote": true,
+  "arrowParens": "avoid",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
