@@ -1,10 +1,12 @@
 FROM node:alpine
 
-WORKDIR /home/waves2020/server/
+WORKDIR /usr/src/waves2020/server/
 
 COPY ./package*.json ./
 RUN npm install
 
 COPY ./ ./
+
+EXPOSE 5000
 
 CMD ["npm","start"]
