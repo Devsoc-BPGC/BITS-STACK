@@ -15,8 +15,11 @@ services:
       - '3000:3000'
     depends_on:
       - server
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     networks:
       - waves_network
+    restart: always
   server:
     build:
       context: ./server
@@ -26,7 +29,7 @@ services:
     restart: always
     command: npm run server
     volumes:
-      - ./server:/usr/src/waves2020/server
+      - ./server/:/usr/src/waves2020/server/
       - /usr/src/waves2020/server/node_modules
     ports:
       - '5000:5000'
@@ -36,10 +39,12 @@ services:
     environment:
       - NODE_ENV=development
       - MONGO_URL=mongodb://mongo:27017/testNames
+      - CHOKIDAR_USEPOLLING=true
     networks:
       - waves_network 
   mongo:
     image: mongo
+    restart: always
     container_name: waves_mongo_container
     ports:
       - '27017:27017'
