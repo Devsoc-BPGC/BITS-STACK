@@ -51,14 +51,14 @@ services:
     networks:
       - waves_network
     volumes:
-      - /data/db
+      - data_mongo:/data/db
 
 networks:
   waves_network:
       driver: bridge
     
 volumes:
-    data-volume:
+    data_mongo:
     node_modules:
     web-root:
       driver: local
