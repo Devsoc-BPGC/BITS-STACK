@@ -14,7 +14,7 @@ function App() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          Learn React Test2
+          Learn React From Test Branch
         </a>
         <TestComponent />
       </header>
