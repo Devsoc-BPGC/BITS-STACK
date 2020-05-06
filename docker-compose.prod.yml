@@ -2,10 +2,8 @@ version: '3.7'
 services:
   client:
     stdin_open: true
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    image: waves_client
+    build: ./client
+    image: ishantgupta777/waves_client
     container_name: waves_client_container
     command: npm start
     volumes:
@@ -19,10 +17,8 @@ services:
       - waves_network
     restart: always
   api:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    image: waves_server
+    build: ./server
+    image: ishantgupta777/waves_server
     container_name: waves_server_container
     restart: always
     command: npm run server
