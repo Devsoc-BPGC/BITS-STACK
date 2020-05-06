@@ -12,15 +12,15 @@ services:
       - ./client/:/usr/src/waves2020/client/
       - /usr/src/waves2020/client/node_modules
     ports:
-      - '3000:3000'
+      - '80:3000'
     depends_on:
-      - server
+      - api
     environment:
       - CHOKIDAR_USEPOLLING=true
     networks:
       - waves_network
     restart: always
-  server:
+  api:
     build:
       context: ./server
       dockerfile: Dockerfile
