@@ -1,0 +1,29 @@
+name: client_test using docker
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build docker file for client
+      run: docker build ./client -t ishantgupta777/waves_client
+      
+    - name: test docker file for client
+      run: docker run ishantgupta777/waves_client npm run test:ci
+
+    - name: deploying to servers
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.MY_SERVER_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+            ls

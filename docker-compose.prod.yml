@@ -1,31 +1,27 @@
 version: '3.7'
 services:
   client:
-    stdin_open: true
     build:
       context: ./client
-      dockerfile: Dockerfile
-    image: waves_client
-    container_name: waves_client_container
-    command: npm start
+      dockerfile: Dockerfile.prod
+    image: waves_client_prod
+    container_name: waves_client_container_prod
     volumes:
       - ./client/:/usr/src/waves2020/client/
       - /usr/src/waves2020/client/node_modules
     ports:
-      - '3000:3000'
+      - '80:80'
     depends_on:
-      - server
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+      - api
     networks:
       - waves_network
     restart: always
-  server:
+  api:
     build:
       context: ./server
-      dockerfile: Dockerfile
-    image: waves_server
-    container_name: waves_server_container
+      dockerfile: Dockerfile.prod
+    image: waves_server_prod
+    container_name: waves_server_container_prod
     restart: always
     command: npm run server
     volumes:
@@ -36,15 +32,13 @@ services:
     depends_on:
       - mongo
     environment:
-      - NODE_ENV=development
       - MONGO_URL=mongodb://mongo:27017/waves2020
-      - CHOKIDAR_USEPOLLING=true
     networks:
       - waves_network 
   mongo:
     image: mongo
     restart: always
-    container_name: waves_mongo_container
+    container_name: waves_mongo_container_prod
     ports:
       - '27017:27017'
     networks:
