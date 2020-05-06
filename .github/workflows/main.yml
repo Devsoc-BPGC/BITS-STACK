@@ -45,6 +45,8 @@ jobs:
             cd waves2020
             docker kill $(docker ps -a -q)
             docker rm $(docker ps -a -q)
+            docker pull ishantgupta777/waves_client
+            docker pull ishantgupta777/waves_server
             docker-compose -f docker-compose.prod.yml up --build -d
 
 
