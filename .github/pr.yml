@@ -1,0 +1,54 @@
+# name: client_test using docker
+
+# on:
+#   push:
+#     branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+
+#     - name: login to docker
+#       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+#     - name: build docker test file for client
+#       run: docker build ./client -t ishantgupta777/waves_client_test
+      
+#     - name: test docker file for client
+#       run: docker run ishantgupta777/waves_client_test npm run test:ci
+
+#     - name: build docker prod file for client
+#       run: docker build ./client -t ishantgupta777/waves_client -f ./client/Dockerfile.prod
+
+#     - name: build docker prod file for server
+#       run: docker build ./server -t ishantgupta777/waves_server -f ./server/Dockerfile.prod
+
+#     - name: push to docker hub
+#       run: |
+#         docker push ishantgupta777/waves_client
+#         docker push ishantgupta777/waves_server
+
+#     - name: deploying to servers
+#       uses: appleboy/ssh-action@master
+#       with:
+#         host: ${{ secrets.MY_SERVER_HOST }}
+#         username: ${{ secrets.USERNAME }}
+#         key: ${{ secrets.KEY }}
+#         port: ${{ secrets.PORT }}
+#         script: |
+#             rm -rf waves2020
+#             git clone git@github.com:ishantgupta777/waves2020.git
+#             cd waves2020
+#             docker kill $(docker ps -a -q)
+#             docker rm $(docker ps -a -q)
+#             docker pull ishantgupta777/waves_client
+#             docker pull ishantgupta777/waves_server
+#             docker-compose -f docker-compose.prod.yml up --build -d
+
+
+# # docker-compose pull
+# # docker-compose -f docker-compose.prod.yml up  --build
