@@ -34,9 +34,9 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.MY_SERVER_HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
+        username: ${{ secrets. }}
+        key: ${{ secrets. }}
+        port: ${{ secrets. }}
         script: |
             rm -rf waves2020
             git clone git@github.com:ishantgupta777/waves2020.git
