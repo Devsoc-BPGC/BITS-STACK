@@ -7,14 +7,16 @@ export default function TestComponent() {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get('/allNames');
+      const res = await axios.get('/api/allNames');
       setNames(res.data);
     })();
   }, []);
 
   const handleClick = async () => {
-    await axios.post('/addName', { name: inputValue });
-    const res = await axios.get('/allNames');
+    await axios.post('/api/addName', {
+      name: inputValue,
+    });
+    const res = await axios.get('/api/allNames');
     setNames(res.data);
   };
 

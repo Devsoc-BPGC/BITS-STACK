@@ -19,16 +19,16 @@ jobs:
     - name: test docker file for client
       run: docker run ishantgupta777/waves_client_test npm run test:ci
 
-    - name: build docker prod file for client
-      run: docker build ./client -t ishantgupta777/waves_client -f ./client/Dockerfile.prod
+    # - name: build docker prod file for client
+    #   run: docker build ./client -t ishantgupta777/waves_client -f ./client/Dockerfile.prod
 
-    - name: build docker prod file for server
-      run: docker build ./server -t ishantgupta777/waves_server -f ./server/Dockerfile.prod
+    # - name: build docker prod file for server
+    #   run: docker build ./server -t ishantgupta777/waves_server -f ./server/Dockerfile.prod
 
-    - name: push to docker hub
-      run: |
-        docker push ishantgupta777/waves_client
-        docker push ishantgupta777/waves_server
+    # - name: push to docker hub
+    #   run: |
+    #     docker push ishantgupta777/waves_client
+    #     docker push ishantgupta777/waves_server
 
     - name: deploying to servers
       uses: appleboy/ssh-action@master
@@ -43,10 +43,11 @@ jobs:
             cd waves2020
             docker kill $(docker ps -a -q)
             docker rm $(docker ps -a -q)
-            docker pull ishantgupta777/waves_client
-            docker pull ishantgupta777/waves_server
             docker-compose -f docker-compose.prod.yml up --build -d
 
 
+
+# docker pull ishantgupta777/waves_client
+# docker pull ishantgupta777/waves_server
 # docker-compose pull
 # docker-compose -f docker-compose.prod.yml up  --build
