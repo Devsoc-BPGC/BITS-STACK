@@ -11,6 +11,7 @@
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": true
     }],
-    "node/no-unpublished-require": "off"
+    "node/no-unpublished-require": "off",
+    "comma-dangle": [2, "always-multiline"]
   }
 }
