@@ -1,8 +1,9 @@
 {
   "extends": ["react-app", "airbnb", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "plugins": ["react", "prettier"],
   "rules": {
     "no-console": "off",
+    "react/prop-types": "off",
     "prettier/prettier": [
       "error",
       {
@@ -18,6 +19,15 @@
       }
     ],
     "no-underscore-dangle": "off",
-    "comma-dangle": [2, "always-multiline"]
+    "comma-dangle": [
+      2,
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ]
   }
 }

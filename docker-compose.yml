@@ -5,12 +5,12 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: waves_client
-    container_name: waves_client_container
+    image: bits_stack_client
+    container_name: bits_stack_client_container
     command: npm start
     volumes:
-      - ./client/:/usr/src/waves2020/client/
-      - /usr/src/waves2020/client/node_modules
+      - ./client/:/usr/src/bits_stack/client/
+      - /usr/src/bits_stack/client/node_modules
     ports:
       - '80:3000'
     depends_on:
@@ -18,42 +18,42 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     networks:
-      - waves_network
+      - bits_stack_network
     restart: always
   api:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: waves_server
-    container_name: waves_server_container
+    image: bits_stack_server
+    container_name: bits_stack_server_container
     restart: always
     command: npm run server
     volumes:
-      - ./server/:/usr/src/waves2020/server/
-      - /usr/src/waves2020/server/node_modules
+      - ./server/:/usr/src/bits_stack/server/
+      - /usr/src/bits_stack/server/node_modules
     ports:
       - '5000:5000'
     depends_on:
       - mongo
     environment:
       - NODE_ENV=development
-      - MONGO_URL=mongodb://mongo:27017/waves2020
+      - MONGO_URL=mongodb://mongo:27017/bits_stack
       - CHOKIDAR_USEPOLLING=true
     networks:
-      - waves_network 
+      - bits_stack_network 
   mongo:
     image: mongo
     restart: always
-    container_name: waves_mongo_container
+    container_name: bits_stack_mongo_container
     ports:
       - '27017:27017'
     networks:
-      - waves_network
+      - bits_stack_network
     volumes:
       - data_mongo:/data/db
 
 networks:
-  waves_network:
+  bits_stack_network:
       driver: bridge
     
 volumes:

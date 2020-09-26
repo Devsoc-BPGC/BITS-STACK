@@ -4,7 +4,7 @@
  */
 
 const app = require('../app');
-const debug = require('debug')('waves2020:server');
+const debug = require('debug')('bits_stack:server');
 const http = require('http');
 
 /**

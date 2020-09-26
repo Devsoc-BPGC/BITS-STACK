@@ -5,21 +5,21 @@ services:
     build: 
       context: ./client
       dockerfile: Dockerfile.prod
-    image: waves_client
-    container_name: waves_client_container
+    image: bits_stack_client
+    container_name: bits_stack_client_container
     ports:
       - '80:80'
     depends_on:
       - api
     networks:
-      - waves_network
+      - bits_stack_network
     restart: always
   api:
     build: 
       context: ./server
       dockerfile: Dockerfile.prod
-    image: ishantgupta777/waves_server
-    container_name: waves_server_container
+    image: ishantgupta777/bits_stack_server
+    container_name: bits_stack_server_container
     restart: always
     command: npm run server
     ports:
@@ -27,22 +27,22 @@ services:
     depends_on:
       - mongo
     environment:
-      - MONGO_URL=mongodb://mongo:27017/waves2020
+      - MONGO_URL=mongodb://mongo:27017/bits_stack
     networks:
-      - waves_network 
+      - bits_stack_network 
   mongo:
     image: mongo
     restart: always
-    container_name: waves_mongo_container
+    container_name: bits_stack_mongo_container
     ports:
       - '27017:27017'
     networks:
-      - waves_network
+      - bits_stack_network
     volumes:
       - data_mongo:/data/db
 
   # nginx_service:
-  #   image: waves_nginx
+  #   image: bits_stack_nginx
   #   build:
   #     context: ./nginx
   #     dockerfile: Dockerfile
@@ -54,7 +54,7 @@ services:
   #     - api
 
 networks:
-  waves_network:
+  bits_stack_network:
       driver: bridge
     
 volumes:

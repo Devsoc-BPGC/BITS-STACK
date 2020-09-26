@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /usr/src/waves2020/client/
+WORKDIR /usr/src/bits_stack/client/
 
 COPY ./package*.json ./
 RUN npm install

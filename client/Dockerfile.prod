@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-WORKDIR /usr/src/waves2020/client/
+WORKDIR /usr/src/bits_stack/client/
 
 COPY ./package*.json ./
 RUN npm install
@@ -21,7 +21,7 @@ RUN chown nginx:nginx /usr/share/nginx/html -R
 # RUN chown nginx:nginx /usr/share/nginx/html/* -R
 # RUN chmod -R 777 /usr/share/nginx/html
 
-COPY --from=builder /usr/src/waves2020/client/build/ /usr/share/nginx/html/
+COPY --from=builder /usr/src/bits_stack/client/build/ /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
