@@ -1,0 +1,50 @@
+.zedi{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fro{
+width: 60px;
+float: left;
+}
+
+.ret{
+   
+ 
+    width: 300px;
+}
+
+.rett{
+    width: 300px;
+    
+}
+
+@media screen and (min-width: 800px) {
+.kod{
+    position: absolute; 
+    right: 70px;
+    display: flex;
+}
+}
+
+.kod div{
+    padding: 6px;
+}
+
+
+@media(max-width: 800px){
+    .kod {
+        position: absolute; 
+        right:10px;
+        display: flex;
+    }
+    .rett{
+        width: 200px;
+        
+    }
+    .ret{
+   
+ 
+        width: 200px;
+    }
+}
