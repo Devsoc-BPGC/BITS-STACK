@@ -2,9 +2,6 @@ const firebase = require('firebase/app');
 require('firebase/auth');
 
 const firebaseConfig = require('./OAuthFirebaseConfig');
-// this file is not present in the git repo, as it is gitignored
-// to prevent API keys getting into public domain
-// a new gitignore is added to this directory to ignore this file.
 
 firebase.initializeApp(firebaseConfig);
 
