@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-quill": "^1.3.5",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -57,9 +59,9 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "nodemon": "^2.0.3",
-    "prettier": "^2.0.5",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.2"
+    "lint-staged": "^10.2.2",
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.5"
   }
 }
