@@ -8,14 +8,17 @@ width: 60px;
 float: left;
 }
 
-.ret{
-   
- 
+.khauf{
+    margin-left: 20px;
+}
+
+.ret{     
     width: 300px;
 }
 
 .rett{
-    width: 300px;
+    padding-left: 120px;
+    width: 400px;
     
 }
 
@@ -31,6 +34,21 @@ float: left;
     padding: 6px;
 }
 
+.puff{
+    transform: scale(3);
+}
+
+.zoho{
+    display: flex;
+    height:56px;
+    width: 400px;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+.teal{
+    text-align: left;
+    padding-left: 20px;
+}
 
 @media(max-width: 800px){
     .kod {
@@ -39,12 +57,12 @@ float: left;
         display: flex;
     }
     .rett{
-        width: 200px;
+        width: 300px;
         
     }
     .ret{
    
  
-        width: 200px;
+        width: 100px;
     }
 }

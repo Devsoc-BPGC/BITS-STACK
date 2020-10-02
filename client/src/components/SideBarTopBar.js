@@ -11,16 +11,22 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import './Bar.css';
 import IconButton from '@material-ui/core/IconButton';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import Box from '@material-ui/core/Box';
+import { Link } from 'react-router';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import OutlineCard from './Announcement';
+import Followup from './Followup';   
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';     
 
 const drawerWidth = 240;
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,28 +51,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+
+
 const SidebarTop=() =>{
   const classes = useStyles();
+ 
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} > 
+    
       <CssBaseline />
       <AppBar position="fixed"  className={classes.appBar}>
         <Toolbar>
           <Typography variant="h4" noWrap>
           <div className='zedi'>
-          <div className='fro'>
-          <IconButton aria-label="display more actions" edge="end" color="inherit">
-          <AccountBalanceIcon/>
-          </IconButton>
-          </div>
-              <div className='ret'>BITS Stack</div>
-                <div className='rett'> 
-                <Typography variant="h4" noWrap>
-                Dashboard
-                </Typography> 
-                </div>
-                <div className='kod'>
+                  <div className='fro'>
+                        <IconButton aria-label="display more actions" edge="end" color="inherit">
+                            <AccountBalanceIcon/>
+                        </IconButton>
+                  </div>
+                  <div className='ret'>BITS Stack</div>
+                      <div className='rett'> 
+                      <Typography variant="h4" noWrap>
+                  <b> 
+                   Dashboard
+                    </b>
+                  </Typography> 
+                 </div>
+                 <div className='kod'>
                 
             
                 <div><SearchIcon/></div>
@@ -79,42 +93,70 @@ const SidebarTop=() =>{
           </Typography>
         </Toolbar>
       </AppBar>
+    
+    
+      <div >
       <Drawer
         className={classes.drawer}
         variant="permanent"
+       // open = {this.state.drawerOpen}
+       // onRequestChange = {(drawerOpen) => this.setState({drawerOpen})}
         classes={{
           paper: classes.drawerPaper,
         }}
       >
         <Toolbar />
         <div className={classes.drawerContainer}>
+        <div style={{backgroundColor:'#909090'}}>
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            {['Dashboard', 'Settings', 'My questions', 'Resources'].map((text, index) => (
+              <ListItem button key={text}  >
+                <ListItemIcon></ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
           </List>
-          <Divider />
+          </div>
+          
+          <Box m={2} /> 
+          <div style={{backgroundColor:'#909090'}}>
+          <Divider/>
+
+          <h2>My Courses</h2>
+          <Divider/>
+
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            {['BITS F111', 'BITS F112', 'BITS F113', 'BITS F211', 'BITS F221', 'BITS F121', 'BITS F311'].map((text, index) => (
+              <ListItem button key={text}  >
+                <ListItemIcon></ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
           </List>
-        </div>
-      </Drawer>
+          </div>
+          </div>
+          </Drawer>
+      </div>
+      
       <main className={classes.content}>
         <Toolbar />
-        <Typography paragraph>
-
-        </Typography>
-        <Typography paragraph>
-        
-        </Typography>
+        <div className='zoho'>
+        <AccountBoxIcon className='puff'/>
+          
+           <div className='teal'><b> Binod Tharu </b><br></br>f201X0XXX@goa.bits-pilani.ac.in</div>
+          
+        </div>  
+       <div className=''>
+       
+       <Grid container spacing={6}>
+       <Grid item lg={8} md={7} sm={6} spacing={10}>
+          <OutlineCard/>
+        </Grid>
+        <Grid item lg={4} md={3} sm={4} spacing={6}>
+          <Paper className={classes.paper}><Followup/></Paper>
+        </Grid>
+        </Grid>
+       </div>
       </main>
     </div>
   );
