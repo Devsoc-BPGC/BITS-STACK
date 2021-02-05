@@ -1,23 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+  Link,
+} from 'react-router-dom';
 import './App.css';
-import TestComponent from './components/testComponent';
+import PostQuestion from './components/postQuestionPage';
+import PrimarySearchAppBar from './components/navbar/navbar';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React From test
-        </a>
-        <TestComponent />
-      </header>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={PrimarySearchAppBar} />
+        <Route exact path="/PostQuestion" component={PostQuestion} />
+      </Switch>
+    </Router>
     </div>
   );
 }
