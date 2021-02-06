@@ -5,7 +5,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import './Followup.css';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -14,7 +13,7 @@ import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 175,
+    maxWidth: 100,
     minHeight: 200,
   },
   bullet: {
@@ -38,22 +37,22 @@ export default function Followup() {
     <div>
       <Card className={classes.root} variant="outlined" className="crey">
         <CardContent>
-          <Typography variant="h6" component="h2">
+          <Typography variant="h6" component="h2" style={{textAlign:'center'}}>
             <b>Following</b>
           </Typography>
           <List>
             {[
-              'BITS F111',
-              'BITS F112',
-              'BITS F113',
-              'BITS F211',
-              'BITS F221',
-              'BITS F121',
-              'BITS F311',
+              'BITS F111 BITS F111BITS F111BITS F111',
+              'BITS F112 BITS F111BITS F111BITS F111',
+              'BITS F113 BITS F111BITS F111BITS F111',
+              'BITS F211 BITS F111BITS F111BITS F111',
+              'BITS F221 BITS F111BITS F111BITS F111',
+              'BITS F121 BITS F111BITS F111BITS F111',
+              'BITS F311 BITS F111BITS F111BITS F111',
             ].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon></ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText  primary={text} />
               </ListItem>
             ))}
           </List>
@@ -61,22 +60,21 @@ export default function Followup() {
           <div>
             <Divider />
           </div>
-          <Typography variant="h6" component="h2">
+          <Typography variant="h6" style={{textAlign:'center'}} component="h2">
             <b>Answered</b>
           </Typography>
           <List>
             {[
-              'BITS F111',
-              'BITS F112',
-              'BITS F113',
-              'BITS F211',
-              'BITS F221',
-              'BITS F121',
-              'BITS F311',
+              'BITS F111 BITS F111BITS F111BITS F111',
+              'BITS F112 BITS F111BITS F111BITS F111',
+              'BITS F113 BITS F111BITS F111BITS F111',
+              'BITS F111 BITS F111BITS F111BITS F111',
+              'BITS F112 BITS F111BITS F111BITS F111',
+              'BITS F113 BITS F111BITS F111BITS F111',
             ].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon></ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText  primary={text} />
               </ListItem>
             ))}
           </List>

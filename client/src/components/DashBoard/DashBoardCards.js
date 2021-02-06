@@ -2,73 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, Collapse, IconButton } from '@material-ui/core';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-
-const useStyles = makeStyles((theme) => ({
-  msgCard: {
-    padding: '15px',
-    marginTop: '20px',
-    backgroundColor: '#FFD94D',
-    transition: 'all ease-in-out 0.3s',
-    '&:hover': {
-      cursor: 'pointer',
-      transform: 'translateY(-2px)',
-    },
-  },
-  index: {
-    fontSize: '18px',
-    fontFamily: 'Oxygen, sans-serif',
-    fontWeight: 700,
-    padding: 0,
-  },
-  cardContent: {
-    margin: 0,
-    fontFamily: 'Raleway',
-    fontWeight: 500,
-    fontStyle: 'normal',
-  },
-  cardFooter: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: 0,
-  },
-  date: {
-    margin: '30px 15px 0 0',
-    fontStyle: 'italic',
-    fontFamily: 'Roboto, sans-serif',
-    fontWeight: 700,
-  },
-  iconButton: {
-    padding: 0,
-    margin: '5px 10px',
-  },
-  anchorClass: {
-    textDecoration: 'none',
-    '&:link': {
-      fontSize: '17px',
-    },
-  },
-  '@media(min-width: 320px)': {
-    date: {
-      margin: '20px 15px 0 0',
-    },
-  },
-  '@media(min-width: 540px)': {
-    cardContent: {
-      fontSize: '16px',
-    },
-  },
-  '@media(min-width: 720px)': {
-    date: {
-      margin: '30px 15px 0 0',
-      fontSize: '16px',
-    },
-  },
-  '@media(min-width: 1024px)': {
-    cardContent: {
-      fontSize: '18px',
-    },
-  },
-}));
+import useStyles from '../DashBoard/DashBoardStyles';
 
 const red = '#EF4646';
 const grey = '#9D9D9D';
