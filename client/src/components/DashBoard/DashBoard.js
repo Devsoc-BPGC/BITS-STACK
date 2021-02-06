@@ -41,38 +41,38 @@ export default function DashBoard() {
   );
 
   const [i, seti] = useState(0);
-  const [x1, setX1] = useState('#C4C4C4');
-  const [x2, setX2] = useState('#EF4646');
+  const [Leftcolour, setLeftcolour] = useState('#C4C4C4');
+  const [Rightcolour, setRightcolour] = useState('#EF4646');
 
 
-  const hc1 = (e) => {
+  const leftclick = (e) => {
     if (i > 15) {
       seti(i - 15);
 
-      setX1('#EF4646');
-      setX2('#EF4646');
+      setLeftcolour('#EF4646');
+      setRightcolour('#EF4646');
     } else if (i <= 15) {
       seti(0);
-      setX1('#C4C4C4');
-      setX2('#EF4646');
+      setLeftcolour('#C4C4C4');
+      setRightcolour('#EF4646');
     }
   };
-  const hc2 = (e) => {
+  const rightclick = (e) => {
     if (i + 15 < DashData.length - 15) {
       seti(i + 15);
-      setX1('#EF4646');
-      setX2('#EF4646');
+      setLeftcolour('#EF4646');
+      setRightcolour('#EF4646');
     } else if (DashData.length - (i + 15) < 15 && DashData.length - (i + 15) > 0) {
       seti(i + 15);
-      setX2('#C4C4C4');
-      setX1('#EF4646');
+      setRightcolour('#C4C4C4');
+      setLeftcolour('#EF4646');
     } else if (i + 15 == DashData.length - 15) {
       seti(i + 15);
-      setX2('#C4C4C4');
-      setX1('#EF4646');
+      setRightcolour('#C4C4C4');
+      setLeftcolour('#EF4646');
     } else {
       seti(i);
-      setX2('#C4C4C4');
+      setRightcolour('#C4C4C4');
     }
   };
 
@@ -155,7 +155,7 @@ export default function DashBoard() {
                 >
                   <Grid item style={{ textAlign: 'center' }}>
                     <svg
-                      onClick={hc1}
+                      onClick={leftclick}
                       width="35"
                       height="23"
                       viewBox="0 0 48 23"
@@ -164,7 +164,7 @@ export default function DashBoard() {
                     >
                       <path
                         d="M5.46392e-07 11.5L47.25 22.3253L47.25 0.674681L5.46392e-07 11.5Z"
-                        fill={x1}
+                        fill={Leftcolour}
                       />
                     </svg>
                   </Grid>
@@ -185,7 +185,7 @@ export default function DashBoard() {
                   </Grid>
                   <Grid item style={{ textAlign: 'center' }}>
                     <svg
-                      onClick={hc2}
+                      onClick={rightclick}
                       width="35"
                       height="23"
                       viewBox="0 0 48 23"
@@ -194,7 +194,7 @@ export default function DashBoard() {
                     >
                       <path
                         d="M48 11.5L0.749999 22.3253L0.75 0.674681L48 11.5Z"
-                        fill={DashData.length > 15 ? x2 : x1}
+                        fill={DashData.length > 15 ? Rightcolour : Leftcolour}
                       />
                     </svg>
                   </Grid>

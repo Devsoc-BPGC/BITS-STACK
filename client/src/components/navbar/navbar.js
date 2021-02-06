@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -19,6 +19,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import useStyles from '../navbar/navbarstyles';
 import Popover from '@material-ui/core/Popover';
 import Avatar from '@material-ui/core/Avatar';
+import { setConstantValue } from 'typescript';
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
@@ -27,6 +28,8 @@ export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [value,setvalue]= useState(true);
+
 
   const handleProfileMenuOpen = (event) => {
     setOpen(true);
@@ -45,6 +48,11 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handlesearch = ()=>{
+    setvalue(!value);
+    console.log(value);
+  }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -117,18 +125,18 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap style={{fontWeight:600}}>
+          <Typography className={classes.title} variant="h6" noWrap style={{fontWeight:600,display:!value?'none':null}}>
             BITS Stack
           </Typography>
           <Typography variant="h6" className={classes.titlecentre}>
             
           </Typography>
-          <Typography variant="h6" className={classes.hide} style={{fontWeight:600}}> 
+          <Typography variant="h6" className={classes.hide} style={{fontWeight:600,display:!value?'none':null}}> 
             DashBoard
           </Typography>
 
           <div className={classes.grow} />
-          <div className={classes.search}>
+          <div className={value?classes.search:classes.bigsearch} onClick={handlesearch}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
