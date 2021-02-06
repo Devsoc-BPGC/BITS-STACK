@@ -10,6 +10,7 @@ import './App.css';
 import PostQuestion from './components/PostQuestion/postQuestionPage';
 import PrimarySearchAppBar from './components/navbar/navbar';
 import DashBoard from './components/DashBoard/DashBoard';
+import DashBoardfirst from './components/DashBoard/DashBoardfirst';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={DashBoard} />
+        <Route exact path="/Dashboardfirst" component={DashBoardfirst} />
         <Route exact path="/PostQuestion" component={PostQuestion} />
       </Switch>
     </Router>

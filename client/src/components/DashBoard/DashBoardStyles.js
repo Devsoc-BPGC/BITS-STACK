@@ -1,17 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-   /* '@global': {
-      '*::-webkit-scrollbar': {
-        width: '10px',
-        backgroundColor: '#FFFDE8',
-      },
-      '*::-webkit-scrollbar-thumb': {
-        backgroundColor: '#EF4646',
-        borderRight: '3px solid #FFFDE8',
-        borderLeft: '3px solid #FFFDE8',
-      },
-    },*/
     root: {
       backgroundColor: '#EF4646',
       width: '100%',
@@ -25,6 +14,25 @@ const useStyles = makeStyles((theme) => ({
       margin: '0px auto 40px auto',
       minHeight: '30vh',
     },
+    messages1: {
+        width: '90%',
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '10px',
+        margin: '0px auto 40px auto',
+      },
+      messages2: {
+        width: '90%',
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '10px',
+        margin: '0px auto 40px auto',
+      },
+    '@media(max-width: 600px)': {
+        messages2: {
+            display:'none',
+        },
+      },
     mainContent: {
       width: '100%',
       backgroundColor: '#EF4646',
@@ -34,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'column',
     },
+    centreAt1: {
+        display: 'flex',
+        flexDirection: 'column',
+      },
     c1: {
       padding: '2rem 0rem 0rem 4rem',
       width: '92vw',
@@ -51,6 +63,11 @@ const useStyles = makeStyles((theme) => ({
       bottom: 1,
       right: 1,
       margin: '0rem 2rem 2rem 0rem',
+    },
+    headprofile: {
+      position:'absolute', 
+      left:'30vw',
+      transform: 'scale(1.1)',
     },
     fabButtonIcon: {
       transform: 'scale(3)',
@@ -146,6 +163,70 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '40vh',
       },
     },
+    msgCard: {
+        padding: '15px',
+        marginTop: '20px',
+        backgroundColor: '#FFD94D',
+        transition: 'all ease-in-out 0.3s',
+        '&:hover': {
+          cursor: 'pointer',
+          transform: 'translateY(-2px)',
+        },
+      },
+      index: {
+        fontSize: '18px',
+        fontFamily: 'Oxygen, sans-serif',
+        fontWeight: 700,
+        padding: 0,
+      },
+      cardContent: {
+        margin: 0,
+        fontFamily: 'Raleway',
+        fontWeight: 500,
+        fontStyle: 'normal',
+      },
+      cardFooter: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: 0,
+      },
+      date: {
+        margin: '30px 15px 0 0',
+        fontStyle: 'italic',
+        fontFamily: 'Roboto, sans-serif',
+        fontWeight: 700,
+      },
+      iconButton: {
+        padding: 0,
+        margin: '5px 10px',
+      },
+      anchorClass: {
+        textDecoration: 'none',
+        '&:link': {
+          fontSize: '17px',
+        },
+      },
+      '@media(min-width: 320px)': {
+        date: {
+          margin: '20px 15px 0 0',
+        },
+      },
+      '@media(min-width: 540px)': {
+        cardContent: {
+          fontSize: '16px',
+        },
+      },
+      '@media(min-width: 720px)': {
+        date: {
+          margin: '30px 15px 0 0',
+          fontSize: '16px',
+        },
+      },
+      '@media(min-width: 1024px)': {
+        cardContent: {
+          fontSize: '18px',
+        },
+      },
   }));
 
   export default useStyles;
