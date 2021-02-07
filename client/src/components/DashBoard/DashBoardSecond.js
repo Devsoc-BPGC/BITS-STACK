@@ -1,13 +1,18 @@
 import { useState, Fragment, useEffect, createContext } from 'react';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import DashBoardCards from '../DashBoard/DashBoardCards';
+import FilledInput from '@material-ui/core/FilledInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import MessageFilterCard from '../DashBoard/DashBoardFilterCards';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import CloseIcon from '@material-ui/icons/Close';
 //export const Data = createContext();
 //import axios from 'axios';
 //export const Data1 = createContext();
@@ -17,10 +22,15 @@ import '../DashBoard/loader.css';
 import useStyles from '../DashBoard/DashBoardStyles';
 import LeftpaneTop from '../leftpanecomponent/leftpanetop';
 import LeftpaneBottom from '../leftpanecomponent/leftpanebottom';
+import { Paper } from '@material-ui/core';
+import FilterListIcon from '@material-ui/icons/FilterList';
 
-export default function DashBoard() {
+export default function DashBoardSecond() {
   const classes = useStyles();
-
+  const [filterval,setfilterval]=useState("");
+  const handleChange=(e)=>{
+      setfilterval(e.target.value);
+  }  
   const [load, setload] = useState(false);
   const [DashData, setDashData] = useState(
     Array(50)
@@ -91,7 +101,7 @@ export default function DashBoard() {
               <Typography className={classes.centre1}>Messages</Typography>
             </Box>
           </Box>
-          <Grid container spacing={3}>
+          <Grid container spacing={2}>
             <Grid item xs={12} sm={3} md={2} lg={2}>
               <Grid container spacing={3}>
                 <Grid item xs={6} sm={12} md={12} lg={12}>
@@ -116,14 +126,35 @@ export default function DashBoard() {
                 </div>
               ) : (
                 <Fragment>
-                  <div className={classes.messages}>
+                  <div className={classes.filter}>
+                  <Paper> 
+                    <FormControl fullWidth className={classes.margin} variant="filled">
+                        <InputLabel htmlFor="filled-adornment-amount">Filter by label</InputLabel>
+                        <FilledInput
+                        id="filled-adornment-amount"
+                        value={filterval}
+                        onChange={handleChange}
+                        startAdornment={<InputAdornment position="start"><FilterListIcon/></InputAdornment>}
+                    />
+                    </FormControl>
+                    </Paper>   
+                    <div style={{marginTop:'40px',display:'flex'}}>
+                        <div>
+                        Applied filters :  
+                        </div>
+                            <Box className={classes.filters} ><p>EEE<CloseIcon style={{fontSize:'small',marginLeft:'4px'}}/></p></Box>
+                            <Box className={classes.filters} ><p>TUT<CloseIcon style={{fontSize:'small',marginLeft:'4px'}}/></p></Box>
+                            <Box className={classes.filters} ><p>hello<CloseIcon style={{fontSize:'small',marginLeft:'4px'}}/></p></Box>
+                    </div>
+                  </div>  
+                  <div className={classes.messages} style={{marginTop:'99px'}}>
                     <Container>
                       {DashData.length > 0 ? (
                         DashData.slice(
                           i,
                           i + 5 <= DashData.length ? i + 5 : DashData.length
                         ).map((message, index) => (
-                          <DashBoardCards
+                          <MessageFilterCard
                             body={message.body}
                             date={message.date}
                             key={DashData.indexOf(message)}
