@@ -138,16 +138,17 @@ export default function DashBoardSecond() {
                     />
                     </FormControl>
                     </Paper>   
-                    <div style={{marginTop:'40px',display:'flex'}}>
-                        <div>
-                        Applied filters :  
-                        </div>
-                            <Box className={classes.filters} ><p>EEE<CloseIcon style={{fontSize:'small',marginLeft:'4px'}}/></p></Box>
-                            <Box className={classes.filters} ><p>TUT<CloseIcon style={{fontSize:'small',marginLeft:'4px'}}/></p></Box>
-                            <Box className={classes.filters} ><p>hello<CloseIcon style={{fontSize:'small',marginLeft:'4px'}}/></p></Box>
-                    </div>
+                    <Grid container style={{marginTop:'40px',flexGrow:1}} spacing={0}>          
+                        Applied filters :                            
+                            <Grid item xs={3}  className={classes.filters} >EEE<CloseIcon className={classes.iconclose} /></Grid>
+                            <Grid item xs={3}  className={classes.filters} >TUT<CloseIcon className={classes.iconclose} /></Grid>
+                            <Grid item xs={3}  className={classes.filters} >hello<CloseIcon className={classes.iconclose} /></Grid>             
+                            <Grid item xs={3}  className={classes.filters} >EEE<CloseIcon className={classes.iconclose} /></Grid>
+                            <Grid item xs={3}  className={classes.filters} >TUT<CloseIcon className={classes.iconclose} /></Grid>
+                            <Grid item xs={3}  className={classes.filters} >hello<CloseIcon className={classes.iconclose} /></Grid>            
+                    </Grid>
                   </div>  
-                  <div className={classes.messages} style={{marginTop:'99px'}}>
+                  <div className={classes.messages} style={{marginTop:'0px'}}>
                     <Container>
                       {DashData.length > 0 ? (
                         DashData.slice(

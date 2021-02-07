@@ -21,6 +21,24 @@ const useStyles = makeStyles((theme) => ({
         padding: '10px',
         margin: '0px auto 40px auto',
       },
+      cardLeftavatar:{
+        fontSize:'20px',
+      },
+      '@media(min-width: 1080px)': {
+        cardRight: {
+          marginLeft:'-25px',
+        },
+      },
+      '@media(min-width: 1280px)': {
+        cardRight: {
+          marginLeft:'-40px',
+        },
+      },
+      '@media(min-width: 1420px)': {
+        cardRight: {
+          marginLeft:'-50px',
+        },
+      },
       messages2: {
         width: '90%',
         display: 'flex',
@@ -47,12 +65,14 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
       },
     filters: {
-      minHeight:'40px',
+      minHeight:'30px',
+      maxHeight:'40px',
       minWidth:'80px',
+      maxWidth:'80px',
       textAlign:'center',
       borderRadius:'50px',
       background:'#2BC8D2',
-      margin:'0px 4px 0 27px'
+      margin:'4px 3px 0 27px',
     },  
     c1: {
       padding: '2rem 0rem 0rem 4rem',
@@ -86,8 +106,12 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 'bold',
       fontSize: '2.6vmax',
     },
+    iconclose: {
+      fontSize:'small',
+      marginLeft:'4px'
+    },
     filter :{
-      height:'40px',
+      minHeight:'40px',
       width:'50%',
       marginLeft:'50px',
       marginTop:'30px',
