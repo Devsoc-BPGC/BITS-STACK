@@ -25,6 +25,7 @@ export default function LeftpaneBottom() {
            <b>My Courses</b> 
         </ListItem>
     </List>
+    <Divider />
       <List style={{maxHeight: '80%', overflow: 'auto'}} >
         <ListItem button  >
       <ListItemText primary={`Item ${1}`} />

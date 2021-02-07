@@ -7,7 +7,7 @@ import useStyles from '../DashBoard/DashBoardStyles';
 const red = '#EF4646';
 const grey = '#9D9D9D';
 
-const DashBoardCards = ({ index,body,date }) => {
+const MessageFilterCard = ({ index,body,date }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [showPrimaryText, setShowPrimaryText] = useState(false);
@@ -55,4 +55,4 @@ const DashBoardCards = ({ index,body,date }) => {
   );
 };
 
-export default DashBoardCards;
+export default MessageFilterCard;

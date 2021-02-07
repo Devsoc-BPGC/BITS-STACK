@@ -46,6 +46,14 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
       },
+    filters: {
+      minHeight:'40px',
+      minWidth:'80px',
+      textAlign:'center',
+      borderRadius:'50px',
+      background:'#2BC8D2',
+      margin:'0px 4px 0 27px'
+    },  
     c1: {
       padding: '2rem 0rem 0rem 4rem',
       width: '92vw',
@@ -77,6 +85,21 @@ const useStyles = makeStyles((theme) => ({
       fontFamily: 'Oxygen',
       fontWeight: 'bold',
       fontSize: '2.6vmax',
+    },
+    filter :{
+      height:'40px',
+      width:'50%',
+      marginLeft:'50px',
+      marginTop:'30px',
+      '&:hover': {
+        cursor: 'pointer',
+      },
+    },
+    '@media(min-width: 820px)': {
+      filter :{
+        marginLeft:'76px',
+        marginTop:'100px',
+      },
     },
     centre1: {
       fontFamily: 'Oxygen',
