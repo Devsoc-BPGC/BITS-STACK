@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyles from '../postQuestion/styles';
+import useStyles from './styles';
 import Grid from '@material-ui/core/Grid';
 import PostComponent from '../../components/postQuestion/postComponent';
 import ProfileComponent from '../../components/postQuestion/profileComponent';

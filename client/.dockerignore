@@ -1,6 +1,0 @@
-.git
-.gitignore
-build
-node_modules
-Dockerfile
-Dockerfile.prod

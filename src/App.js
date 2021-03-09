@@ -4,7 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import PostQuestion from './pages/postQuestion/page';
+import PostQuestion from './pages/postQuestion';
 
 
 function App() {
