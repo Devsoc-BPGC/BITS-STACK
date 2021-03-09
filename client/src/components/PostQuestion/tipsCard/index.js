@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import useStyles from './style';
-import Avatar from '@material-ui/core/Avatar';
 
-const Tipcomponent = () => {
+const TipsCard = () => {
   const classes = useStyles();
-
 
   return (
     <div className={classes.tipContainer}>
@@ -35,4 +33,4 @@ const Tipcomponent = () => {
   );
 };
 
-export default Tipcomponent;
+export default TipsCard;

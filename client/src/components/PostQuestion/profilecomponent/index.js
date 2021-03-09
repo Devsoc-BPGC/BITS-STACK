@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import useStyles from '../profilecomponent/style';
+import React from 'react';
+import useStyles from './style';
 import Avatar from '@material-ui/core/Avatar';
 
-const Profilecomponent = () => {
+const ProfileComponent = () => {
   const classes = useStyles();
-
 
   return (
     <div className={classes.profileContainer}>
@@ -39,4 +38,4 @@ const Profilecomponent = () => {
   );
 };
 
-export default Profilecomponent;
+export default ProfileComponent;

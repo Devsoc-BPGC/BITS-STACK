@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import useStyles from '../postcomponent/style';
+import React, { useState } from 'react';
+import useStyles from './style';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import QuestionMarkdown from './questionMarkdown';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { QUILL_FORMATS } from '../../../constants';
 
 export default function QuillTextArea({ height, setBody }) {
   const [text, setText] = useState(' ');
@@ -10,21 +11,6 @@ export default function QuillTextArea({ height, setBody }) {
       ['link', 'image', 'code-block'],
     ],
   };
-
-  const formats = [
-    'header',
-    'bold',
-    'italic',
-    'underline',
-    'strike',
-    'blockquote',
-    'list',
-    'bullet',
-    'indent',
-    'link',
-    'image',
-    'code-block',
-  ];
 
   return (
     <div>
@@ -36,7 +22,7 @@ export default function QuillTextArea({ height, setBody }) {
           setBody(val);
         }}
         modules={modules}
-        formats={formats}
+        formats={QUILL_FORMATS}
         style={{ height, marginBottom: '5vh' }}
       />
     </div>

@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import styles from '../../../constant-style.scss'
 
 const useStyles = makeStyles({
     body: {
@@ -13,16 +14,15 @@ const useStyles = makeStyles({
     postQuestionContainer: {
         margin: '1.5rem',
         maxHeight: '100%',
-        backgroundColor: '#f6f6f6',
+        backgroundColor: styles.primaryColor,
         flexGrow: 50,
         maxWidth: '90%',
         '@media(max-width: 950px)': {
           maxWidth: '100%',
         },
       },
-    cta: {},
     titleContainer: {
-      backgroundColor: '#c4c4c4',
+      backgroundColor: styles.secondaryColor,
       padding: '1rem',
       paddingLeft: '1.5rem',
     },
