@@ -4,7 +4,8 @@ import useStyles from './styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import DashBoardCards from '../../components/dashBoard/dashboardCards/index';
+import QuestionCards from '../../components/dashBoard/questionCards/index';
+import AnswerCards from '../../components/dashBoard/answerCards/index';
 import LeftpaneTop from '../../components/leftpanecomponent/normalView/leftpanetop';
 import LeftpaneBottom from '../../components/leftpanecomponent/normalView/leftpanebottom';
 import Typography from '@material-ui/core/Typography';
@@ -16,20 +17,39 @@ const Channels = () => {
     const handleChange=(e)=>{
         setfilterval(e.target.value);
     }  
-    const [DashData, setDashData] = useState(
-      Array(50)
+    const [DashQuestions, setDashQuestions] = useState(
+      Array(2)
         .fill({
           body:
-            'Lorem Ipsum is simply dummy Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy.',
-          date: ' 28th Dec 2020, 2:31 a.m.',
+            'Lorem Ipsum is simply dummy Lorem Ipsum is ?',
+          date: 'posted 2hrs ago by',
+          name: 'Kick Buttoswki',
         })
         .map((obj) => {
           return {
             body: obj.body,
-            date: obj.data + 'aaj ka din',
+            date: obj.date,
+            name: obj.name
           };
         })
     );
+
+    const [DashAnswers, setDashAnswers] = useState(
+        Array(2)
+          .fill({
+            body:
+              'Lorem Ipsum is simply dummy Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy.',
+            date: 'answered 2hrs ago',
+            name: 'Kick Buttoswki'
+          })
+          .map((obj) => {
+            return {
+              body: obj.body,
+              date: obj.date,
+              name: obj.name
+            };
+          })
+      );
         
     const [i, seti] = useState(0);
     const [Leftcolour, setLeftcolour] = useState('#C4C4C4');
@@ -47,15 +67,15 @@ const Channels = () => {
       }
     };
     const rightclick = (e) => {
-      if (i + 5 < DashData.length - 5) {
+      if (i + 5 < DashQuestions.length - 5) {
         seti(i + 5);
         setLeftcolour('#EF4646');
         setRightcolour('#EF4646');
-      } else if (DashData.length - (i + 5) < 5 && DashData.length - (i + 5) > 0) {
+      } else if (DashQuestions.length - (i + 5) < 5 && DashQuestions.length - (i + 5) > 0) {
         seti(i + 5);
         setRightcolour('#C4C4C4');
         setLeftcolour('#EF4646');
-      } else if (i + 5 == DashData.length - 5) {
+      } else if (i + 5 == DashQuestions.length - 5) {
         seti(i + 5);
         setRightcolour('#C4C4C4');
         setLeftcolour('#EF4646');
@@ -96,16 +116,17 @@ return(
                 <Fragment>
                   <div className={classes.messages}>
                     <Container>
-                      {DashData.length > 0 ? (
-                        DashData.slice(
+                      {DashQuestions.length > 0 ? (
+                        DashQuestions.slice(
                           i,
-                          i + 5 <= DashData.length ? i + 5 : DashData.length
+                          i + 5 <= DashQuestions.length ? i + 5 : DashQuestions.length
                         ).map((message, index) => (
-                          <DashBoardCards
+                          <QuestionCards
                             body={message.body}
                             date={message.date}
-                            key={DashData.indexOf(message)}
-                            index={DashData.indexOf(message)}
+                            name={message.name}
+                            key={DashQuestions.indexOf(message)}
+                            index={DashQuestions.indexOf(message)}
                           />
                         ))
                       ) : (
@@ -115,7 +136,36 @@ return(
                       )}
                     </Container>
                   </div>
-                  <Paginator Leftcolour={Leftcolour} Rightcolour={Rightcolour} i={i} rightclick={rightclick} leftclick={leftclick} DashData={DashData}/>    
+                  
+                  {/* Answer Cards UI Construction and Testing Below  */}  
+
+
+                  <div className={classes.messages}>
+                    <Container>
+                      {DashAnswers.length > 0 ? (
+                        DashAnswers.slice(
+                          i,
+                          i + 5 <= DashAnswers.length ? i + 5 : DashAnswers.length
+                        ).map((message, index) => (
+                          <AnswerCards
+                            body={message.body}
+                            date={message.date}
+                            name={message.name}
+                            key={DashAnswers.indexOf(message)}
+                            index={DashAnswers.indexOf(message)}
+                          />
+                        ))
+                      ) : (
+                        <h1 className={classes.noMessages}>
+                          No Messages to Display!
+                        </h1>
+                      )}
+                    </Container>
+                  </div>                        
+
+
+                  {/* Answer Cards UI Construction and Testing Above  */}       
+                  <Paginator Leftcolour={Leftcolour} Rightcolour={Rightcolour} i={i} rightclick={rightclick} leftclick={leftclick} DashData={DashQuestions}/>    
                 </Fragment>
             </Grid>
           </Grid>

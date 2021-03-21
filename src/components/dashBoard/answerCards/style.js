@@ -12,23 +12,47 @@ const useStyles = makeStyles({
           transform: 'translateY(-2px)',
         },
       },
+      date1:{
+        fontStyle:'italic',
+        marginLeft: '11px'
+      },
       cardLeftavatar:{
         fontSize:'20px',
       },
       cardContent: {
-        margin: 0,
+        marginLeft: '20px',
         fontFamily: 'Raleway',
         fontWeight: 500,
         fontStyle: 'normal',
       },
+      '@media(min-width: 270px)': {
+        cardContent: {
+          marginLeft: '31px',
+          fontSize: '16px',
+        },
+        date1:{
+          marginLeft: '31px',
+          fontSize: '13px'
+        },
+      },
       '@media(min-width: 540px)': {
         cardContent: {
+          marginLeft: '25px',
           fontSize: '16px',
+        },
+        date1:{
+          marginLeft: '25px',
+          fontSize: '14px'
         },
       },
       '@media(min-width: 1024px)': {
         cardContent: {
+          marginLeft: '9px',
           fontSize: '18px',
+        },
+        date1:{
+          marginLeft: '9px',
+          fontSize: '16px'
         },
       },
       index: {
@@ -48,15 +72,34 @@ const useStyles = makeStyles({
         fontFamily: 'Roboto, sans-serif',
         fontWeight: 700,
       },
-      '@media(min-width: 320px)': {
+      icon: {
+        fontSize: 'large',
+      },
+      small: {
+        fontSize :'18px',
+      },
+      '@media(min-width: 200px)': {
         date: {
-          margin: '20px 15px 0 0',
+          margin: '20px 15px 0 -40px',
+          fontSize: '12px',
+        },
+        icon: {
+          fontSize: 'medium',
+        },
+        small: {
+          fontSize :'12px',
         },
       },
       '@media(min-width: 720px)': {
         date: {
           margin: '30px 15px 0 0',
           fontSize: '16px',
+        },
+        icon: {
+          fontSize: 'large',
+        },
+        small: {
+          fontSize :'15px',
         },
       },
       iconButton: {
