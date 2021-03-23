@@ -25,14 +25,19 @@ const FilterPage = () => {
     const [DashData, setDashData] = useState(
       Array(50)
         .fill({
-          body:
-            'Lorem Ipsum is simply dummy Lorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummyLorem Ipsum is simply dummy.',
+          question:
+            'Lorem Ipsum is simply dummy Lorem Ipsum is ',
+            body:
+            'Lorem Ipsum is simply dummy Lorem Ipsum is Lorem Ipsum is simply dummy Lorem Ipsum is Lorem Ipsum is simply dummy Lorem Ipsum is ',            
           date: ' 28th Dec 2020, 2:31 a.m.',
+          name:'hemlo rendi'
         })
         .map((obj) => {
           return {
             body: obj.body,
-            date: obj.data + 'aaj ka din',
+            question: obj.question,
+            date: obj.date,
+            name: obj.name
           };
         })
     );
@@ -115,6 +120,8 @@ return(
                         ).map((message, index) => (
                           <MessageFilterCard
                             body={message.body}
+                            name={message.name}
+                            question={message.question}
                             date={message.date}
                             key={DashData.indexOf(message)}
                             index={DashData.indexOf(message)}
