@@ -9,12 +9,12 @@ const Filters = ({ index,body,date }) => {
   return (
     <Grid container style={{marginTop:'40px',flexGrow:1}} spacing={0}>          
     Applied filters :                            
-        <Grid item s={3} xs={2} className={classes.filters} >EEE<CloseIcon className={classes.iconclose} /></Grid>
-        <Grid item s={3} xs={2} className={classes.filters} >TUT<CloseIcon className={classes.iconclose} /></Grid>
-        <Grid item s={3} xs={2} className={classes.filters} >hello<CloseIcon className={classes.iconclose} /></Grid>             
-        <Grid item s={3} xs={2} className={classes.filters} >EEE<CloseIcon className={classes.iconclose} /></Grid>
-        <Grid item s={3} xs={2} className={classes.filters} >TUT<CloseIcon className={classes.iconclose} /></Grid>
-        <Grid item s={3} xs={2} className={classes.filters} >hello<CloseIcon className={classes.iconclose} /></Grid>            
+        <Grid item sm={3} xs={2} className={classes.filters} >EEE<CloseIcon className={classes.iconclose} /></Grid>
+        <Grid item sm={3} xs={2} className={classes.filters} >TUT<CloseIcon className={classes.iconclose} /></Grid>
+        <Grid item sm={3} xs={2} className={classes.filters} >hello<CloseIcon className={classes.iconclose} /></Grid>             
+        <Grid item sm={3} xs={2} className={classes.filters} >EEE<CloseIcon className={classes.iconclose} /></Grid>
+        <Grid item sm={3} xs={2} className={classes.filters} >TUT<CloseIcon className={classes.iconclose} /></Grid>
+        <Grid item sm={3} xs={2} className={classes.filters} >hello<CloseIcon className={classes.iconclose} /></Grid>            
 </Grid>
   );
 };

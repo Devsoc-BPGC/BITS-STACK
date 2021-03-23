@@ -69,7 +69,7 @@ import { makeStyles } from '@material-ui/core/styles';
     inner: {
       backgroundColor: '#FFFDE8',
       padding: '1.5rem',
-      minHeight: '89.5vh',
+      minHeight: '100vh',
       '@media(max-height 900px)': {
         minHeight: '90vh',
       },
