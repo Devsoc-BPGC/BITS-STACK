@@ -63,13 +63,6 @@ const MessageFilterCard = ({ index, body, date, question, name }) => {
             {body.length > 80 ? (!expanded ? 'Read More' : 'Read Less') : ''}
           </span>
         </CardContent>
-
-        <div className={classes.cardFooter}>
-          <CardActions disableSpacing>
-            <IconButton classes={{ root: classes.iconButton }}>
-            </IconButton>
-          </CardActions>
-        </div>
         </Grid>
         </Grid> 
 
@@ -106,9 +99,7 @@ const MessageFilterCard = ({ index, body, date, question, name }) => {
               <i className={classes.manfont}>asked 1d ago</i>
             </div>
 
-            <IconButton classes={{ root: classes.iconButton }}>
-              
-            </IconButton>
+
           </CardActions>
         </div>
         </Grid>

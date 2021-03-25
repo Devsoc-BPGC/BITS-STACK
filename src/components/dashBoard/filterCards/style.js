@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) =>({
         '@media(max-width: 600px)': {
           marginLeft:'-10px',
         },
-        minHeight:'10vh',
+        //minHeight:'10vh',
       },
       cardwrap:{
         //minHeight:'80px'
