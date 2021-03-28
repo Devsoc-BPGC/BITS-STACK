@@ -80,7 +80,7 @@ const useStyles = makeStyles({
       },
       '@media(min-width: 200px)': {
         date: {
-          margin: '20px 15px 0 -40px',
+          margin: '0px 15px 0 -20px',
           fontSize: '12px',
         },
         icon: {
@@ -92,7 +92,7 @@ const useStyles = makeStyles({
       },
       '@media(min-width: 720px)': {
         date: {
-          margin: '30px 15px 0 0',
+          margin: '0px 15px 0 0',
           fontSize: '16px',
         },
         icon: {
