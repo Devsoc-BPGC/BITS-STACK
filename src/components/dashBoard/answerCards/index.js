@@ -29,7 +29,7 @@ const AnswerCards = ({ index, name, body, date }) => {
         <p className={classes.date1}>{date}</p>
 
         <CardContent>
-            {body}
+            {window.innerWidth>600?body.slice(0,80):body.slice(0,49)}
         </CardContent>
 
         <div className={classes.cardFooter}>

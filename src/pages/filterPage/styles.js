@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
       overflowX: 'hidden',
     },
     messages: {
-      width: '90%',
+      width: '100%',
       display: 'flex',
       justifyContent: 'center',
       padding: '10px',

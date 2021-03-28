@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Card, CardActions, Collapse, IconButton } from '@material-ui/core';
+import { Card, CardActions, Collapse, IconButton, CardContent } from '@material-ui/core';
 import useStyles from './style';
 import Grid from '@material-ui/core/Grid';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
-const MessageFilterCard = ({ index,body,date }) => {
+const MessageFilterCard = ({ index, body, date, question, name }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [showPrimaryText, setShowPrimaryText] = useState(false);
@@ -14,18 +16,34 @@ const MessageFilterCard = ({ index,body,date }) => {
     <Card className={classes.msgCard} raised={true} >
       <div> 
         <Grid container>
-        <Grid item xs={1} sm={1} md={1} lg={1}> 
-        <div>
-            <b className={classes.cardLeftavatar}>Q</b>
+        <Grid item xs={2} sm={2} md={1} lg={1}> 
+        <div className={classes.cardwrap}>
+            <div className={classes.cardLeftavatar}>
+              <div className={classes.cardLefty}>
+                
+                  <ArrowUpwardIcon/>
+  
+                </div>
+                <div className={classes.cardLeftyflex}>
+                69
+
+              </div>
+              </div>
         </div>  
-        </Grid>   
-        <Grid item xs={11} sm={11} md={11} lg={11} className={classes.cardRight}>
+        </Grid>  
+
+        <Grid item xs={10} sm={10} md={11} lg={11} className={classes.cardRight}>
         <div className={classes.cardContent}>
-          <div style={{ whiteSpace: 'pre-line' }}>
+              {question}?
+        </div>
+
+        <CardContent>
+        <div style={{ whiteSpace: 'pre-line' }}>
             <span className={classes.index}></span>
             {!showPrimaryText
               ? body.length > 80
-                ? `${body.substr(0, 80)}...`
+                ? window.innerWidth<600?`${body.substr(0, 21)}...`
+                :`${body.substr(0, 80)}...`
                 : `${body}`
               : ''}
             <Collapse
@@ -43,14 +61,46 @@ const MessageFilterCard = ({ index,body,date }) => {
               setShowPrimaryText(!showPrimaryText);
             }}
           >
-            {body.length > 80 ? (!expanded ? 'View More' : 'View Less') : ''}
+            {body.length > 80 ? (!expanded ? 'Read More' : 'Read Less') : ''}
           </span>
-        </div>
+        </CardContent>
+        </Grid>
+        </Grid> 
+
+        <Grid container>
+        <Grid item xs={2} sm={2} md={1} lg={1}> 
+        <div className={classes.cardwrap}>
+            <div className={classes.cardLeftavatar}>
+                <div className={classes.cardLefty1}>
+
+                  <ArrowDownwardIcon/>
+ 
+                </div>
+                <div className={classes.cardLeftyflex1}>
+                69
+
+              </div>
+              </div>
+        </div>  
+        </Grid>  
+
+        <Grid item xs={10} sm={10} md={11} lg={11} className={classes.cardRight}>
+
+
         <div className={classes.cardFooter}>
-          <p className={classes.date}>{date}</p>
           <CardActions disableSpacing>
-            <IconButton classes={{ root: classes.iconButton }}>
-            </IconButton>
+            
+
+            <div className={classes.photodabba}>
+
+            </div>
+            <div className={classes.manfont}>
+              {name}
+              <br/>
+              <i className={classes.manfont}>asked 1d ago</i>
+            </div>
+
+
           </CardActions>
         </div>
         </Grid>
