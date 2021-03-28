@@ -42,7 +42,8 @@ const MessageFilterCard = ({ index, body, date, question, name }) => {
             <span className={classes.index}></span>
             {!showPrimaryText
               ? body.length > 80
-                ? `${body.substr(0, 80)}...`
+                ? window.innerWidth<600?`${body.substr(0, 21)}...`
+                :`${body.substr(0, 80)}...`
                 : `${body}`
               : ''}
             <Collapse
